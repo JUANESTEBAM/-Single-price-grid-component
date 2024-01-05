@@ -1,0 +1,216 @@
+/* src/components/Card.css */
+:root {
+    --Cyan: hsl(179, 62%, 43%);
+    --Bright-Yellow: hsl(71, 73%, 54%);
+    --Light-Gray: hsl(204, 43%, 93%);
+    --Grayish-Blue: hsl(218, 22%, 67%);
+    --font-page: "Karla", sans-serif;
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
+  *::after,
+  *::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding-top: 6px;
+  }
+  
+  body {
+    font-size: 1rem;
+    font-family: var(--font-page);
+    background-color: var(--Light-Gray);
+  }
+  
+  .card-container {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .community-section,
+  .subscription-section,
+  .why-us-section {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+  }
+  
+  .community-section {
+    background-color: #fff;
+  }
+  
+  .community-section h3 {
+    margin: 0.5rem 1rem 1.3rem 0.5rem;
+    font-weight: 700;
+    color: var(--Cyan);
+  }
+  
+  .community-section header + p {
+    margin: 0.5rem 1rem 1.2rem 0.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--Bright-Yellow);
+  }
+  
+  .community-section header + p + p {
+    margin-left: 0.5rem;
+    line-height: 1.7;
+    font-size: 1.5ch;
+    color: var(--Grayish-Blue);
+  }
+  
+  .subscription-section {
+    background-color: hsl(179, 62%, 41%);
+    color: var(--Light-Gray);
+  }
+  
+  .subscription-section h3 {
+    margin: 0.5rem 1rem 1.1rem 0.5rem;
+  }
+  
+  .subscription-section header + p {
+    margin-left: 0.5rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .price {
+    margin-right: 0.5rem;
+    font-size: 2rem;
+    vertical-align: sub;
+    color: #fff;
+  }
+  
+  .subscription-section header + p + p {
+    margin-left: 0.5rem;
+  }
+  
+  .subscription-section button {
+    width: 90%;
+    margin: 2.5rem 1rem 0.4rem 0.5rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    background-color: var(--Bright-Yellow);
+    color: #fff;
+  }
+  
+  .why-us-section {
+    background-color: hsl(179, 62%, 45%);
+    color: var(--Light-Gray);
+  }
+  
+  .why-us-section h3 {
+    margin: 0.5rem 1rem 1.1rem 0.5rem;
+  }
+  
+  .why-us-section header + p {
+    margin-left: 0.5rem;
+    max-width: 216px;
+  }
+  
+  footer {
+    margin-bottom: 1rem;
+  }
+  
+  @media screen and (min-width: 48em) {
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      min-height: 100vh;
+    }
+    .card-container {
+      display: grid;
+      grid-template-areas:
+        "community community"
+        "subscription why";
+      grid-template-columns: 361px 354px;
+      grid-template-rows: 197px 400px;
+    }
+    .community-section,
+    .subscription-section,
+    .why-us-section {
+      height: 265px;
+    }
+  
+    .community-section {
+      grid-area: community;
+    }
+  
+    .community-section header + p {
+      margin-bottom: 0.5rem;
+    }
+  
+    .community-section header + p + p {
+      width: 517px;
+      margin-bottom: 1rem;
+    }
+  
+    .subscription-section {
+      grid-area: subscription;
+      border-bottom-left-radius: 5px;
+    }
+  
+    .subscription-section button {
+      width: 75%;
+    }
+  
+    .why-us-section {
+      grid-area: why;
+      border-bottom-left-radius: 0;
+    }
+  
+    .why-us-section p {
+      line-height: 1.5;
+    }
+  
+    .community-section,
+    .subscription-section,
+    .why-us-section {
+      padding-left: 2rem;
+    }
+  
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 40px;
+    }
+  }
+  
+  @media screen and (min-width: 57em){
+    .card-container{
+      grid-template-columns: 430px 430px;
+      grid-template-rows: 197px 400px;
+      font-size: 1.1rem;
+    }
+  
+    .community-section,
+    .subscription-section,
+    .why-us-section {
+      height: 300px;
+    }
+  }
+  
+  @media screen and (min-width: 64em) {
+    .card-container{
+      grid-template-columns: 400px 400px;
+      grid-template-rows: 197px 358px;
+      margin-bottom: 0;
+    }
+    .subscription-section button{
+      width: 70%;
+    }
+  
+    .subscription-section button:hover{
+      background-color: #fff;
+      color: var(--Bright-Yellow);
+    }
+  }
+  
